@@ -1,5 +1,5 @@
 import Feather from '@expo/vector-icons/Feather';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
   width: 40%;
