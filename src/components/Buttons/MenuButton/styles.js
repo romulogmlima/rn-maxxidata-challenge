@@ -14,7 +14,7 @@ export const Container = styled.TouchableOpacity`
 export const Title = styled.Text`
   font-size: 16px;
   font-weight: bold;
-  color: '#000000';
+  color: #000000;
 `;
 
 export const Icon = styled(Feather)`
