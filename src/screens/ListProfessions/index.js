@@ -1,29 +1,29 @@
 import React, { useMemo, useState } from 'react';
 
-import ProfessionalCard from '../../components/Cards/ProfessionalCard';
+import ProfessionCard from '../../components/Cards/ProfessionCard';
 import SearchBar from '../../components/SearchBar';
 import Wrapper from '../../components/Wrapper';
-import data from '../../mocks/professionals';
+import data from '../../mocks/professions';
 import { Content, List } from './styles';
 
-const ListProfessionals = () => {
+const ListProfessions = () => {
   const [search, setSearch] = useState('');
-  const [listProfessionals, setListProfessionals] = useState(data);
+  const [listProfessions, setListProfessions] = useState(data);
 
-  const filteredListProfessionals = useMemo(() => {
-    return listProfessionals.filter((item) =>
-      item.nome.toUpperCase().includes(search.toUpperCase())
+  const filteredListProfessions = useMemo(() => {
+    return listProfessions.filter((item) =>
+      item.descricao.toUpperCase().includes(search.toUpperCase())
     );
-  }, [listProfessionals, search]);
+  }, [listProfessions, search]);
 
   return (
     <Wrapper>
       <Content>
         <List
-          data={filteredListProfessionals}
+          data={filteredListProfessions}
           keyExtractor={(item) => item.id}
           showsVerticalScrollIndicator={false}
-          renderItem={({ item }) => <ProfessionalCard item={item} />}
+          renderItem={({ item }) => <ProfessionCard item={item} />}
           ListHeaderComponent={
             <SearchBar
               value={search}
@@ -37,4 +37,4 @@ const ListProfessionals = () => {
   );
 };
 
-export default ListProfessionals;
+export default ListProfessions;
