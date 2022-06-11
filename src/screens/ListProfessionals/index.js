@@ -22,6 +22,7 @@ const ListProfessionals = () => {
         <List
           data={filteredListProfessionals}
           keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
           renderItem={({ item }) => <ProfessionalCard item={item} />}
           ListHeaderComponent={
             <SearchBar
