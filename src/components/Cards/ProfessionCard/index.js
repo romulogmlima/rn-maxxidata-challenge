@@ -1,13 +1,30 @@
 import React from 'react';
 
-import { Badge, BadgeLabel, Container, Description } from './styles';
+import {
+  Badge,
+  BadgeLabel,
+  Container,
+  ContainerDeleteButton,
+  ContainerEditButton,
+  Description,
+  Header,
+  Icon,
+} from './styles';
 
-const ProfessionCard = ({ item }) => (
+const ProfessionCard = ({ item, onPressDelete, onPressEdit }) => (
   <Container>
-    <Description>{item.descricao}</Description>
-    <Badge isActive>
-      <BadgeLabel>Ativo</BadgeLabel>
-    </Badge>
+    <Header>
+      <Description>{item.descricao}</Description>
+      <Badge isActive={item.situacao}>
+        <BadgeLabel>{item.situacao ? 'Ativo' : 'Inativo'}</BadgeLabel>
+      </Badge>
+    </Header>
+    <ContainerDeleteButton onPress={onPressDelete}>
+      <Icon name="delete" />
+    </ContainerDeleteButton>
+    <ContainerEditButton onPress={onPressEdit}>
+      <Icon name="square-edit-outline" />
+    </ContainerEditButton>
   </Container>
 );
 
