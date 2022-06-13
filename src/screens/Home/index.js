@@ -10,7 +10,7 @@ const menuItems = [
     id: 1,
     title: 'Adicionar Profissional',
     icon: 'user-plus',
-    navigateTo: 'ListProfessionals',
+    navigateTo: 'RegisterProfessional',
   },
   {
     id: 2,
