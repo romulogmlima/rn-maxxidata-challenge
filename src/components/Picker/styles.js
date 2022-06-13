@@ -13,9 +13,7 @@ export const Label = styled.Text`
   font-size: 16px;
 `;
 
-export const CustomPicker = styled(RNPickerSelect).attrs(() => ({
-  placeholderTextColor: 'red',
-}))``;
+export const CustomPicker = styled(RNPickerSelect).attrs(() => ({}))``;
 
 export const ErrorMessage = styled.Text`
   color: red;

@@ -22,13 +22,13 @@ const menuItems = [
     id: 3,
     title: 'Adicionar Profissão',
     icon: 'user-plus',
-    navigateTo: 'ListProfessionals',
+    navigateTo: 'RegisterProfession',
   },
   {
     id: 4,
     title: 'Listar Profissões',
     icon: 'list',
-    navigateTo: 'ListProfessionals',
+    navigateTo: 'ListProfessions',
   },
 ];
 
