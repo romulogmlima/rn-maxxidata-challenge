@@ -7,12 +7,9 @@ import Input from '../../components/Input';
 import Wrapper from '../../components/Wrapper';
 import { schemaRegisterProfession } from '../../validations';
 
-const initialValues = {
-  descricao: '',
-  situacao: true,
-};
+const RegisterProfession = ({ route }) => {
+  const { initialValues } = route.params;
 
-const RegisterProfession = () => {
   const onSubmit = (values) => {
     console.log('VALUES: ', values);
   };
@@ -51,7 +48,6 @@ const RegisterProfession = () => {
         value={values.situacao}
         onValueChange={(value) => setFieldValue('situacao', value)}
       />
-
       <Button
         title="Cadastrar"
         onPress={handleSubmit}

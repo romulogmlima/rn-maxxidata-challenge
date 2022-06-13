@@ -11,24 +11,41 @@ const menuItems = [
     title: 'Adicionar Profissional',
     icon: 'user-plus',
     navigateTo: 'RegisterProfessional',
+    params: {
+      initialValues: {
+        nome: '',
+        telefone: '',
+        email: '',
+        tipoDeProfissional: '',
+        situacao: true,
+      },
+    },
   },
   {
     id: 2,
     title: 'Listar Profissionais',
     icon: 'list',
     navigateTo: 'ListProfessionals',
+    params: null,
   },
   {
     id: 3,
     title: 'Adicionar Profissão',
     icon: 'user-plus',
     navigateTo: 'RegisterProfession',
+    params: {
+      initialValues: {
+        descricao: '',
+        situacao: true,
+      },
+    },
   },
   {
     id: 4,
     title: 'Listar Profissões',
     icon: 'list',
     navigateTo: 'ListProfessions',
+    params: null,
   },
 ];
 
@@ -44,7 +61,7 @@ const Home = () => {
           renderItem={({ item }) => (
             <MenuButton
               {...item}
-              onPress={() => navigation.navigate(item.navigateTo)}
+              onPress={() => navigation.navigate(item.navigateTo, item.params)}
             />
           )}
           numColumns={2}

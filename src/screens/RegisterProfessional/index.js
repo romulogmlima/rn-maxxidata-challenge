@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ScrollView } from 'react-native';
 
 import Button from '../../components/Buttons/Button';
@@ -8,17 +8,12 @@ import Input from '../../components/Input';
 import MaskedInput from '../../components/MaskedInput';
 import Picker from '../../components/Picker';
 import Wrapper from '../../components/Wrapper';
+import data from '../../mocks/professions';
 import { validationSchema } from '../../validations';
 
-const initialValues = {
-  nome: '',
-  telefone: '',
-  email: '',
-  tipoDeProfissional: '',
-  situacao: true,
-};
+const RegisterProfessional = ({ route }) => {
+  const { initialValues } = route.params;
 
-const RegisterProfessional = () => {
   const onSubmit = (values) => {
     console.log('VALUES: ', values);
   };
@@ -40,6 +35,18 @@ const RegisterProfessional = () => {
     handleSubmit,
     setFieldValue,
   } = formik;
+
+  const dataProfessions = useMemo(() => {
+    return data
+      .filter((item) => item.situacao)
+      .map((item) => {
+        return {
+          label: item.descricao,
+          value: item.id,
+          key: item.id,
+        };
+      });
+  }, [data]);
 
   return (
     <Wrapper>
@@ -79,19 +86,16 @@ const RegisterProfessional = () => {
           autoCapitalize="none"
         />
         <Picker
+          value={
+            initialValues.tipoDeProfissional
+              ? initialValues?.tipoDeProfissional
+              : undefined
+          }
           label="Profissão"
           onValueChange={(value) => setFieldValue('tipoDeProfissional', value)}
           error={touched.tipoDeProfissional && errors.tipoDeProfissional}
           placeholder={{ label: 'Selecionar', value: '', key: 0 }}
-          items={[
-            { label: 'Médico', value: 'Médico', key: 1 },
-            {
-              label: 'Desenvolvedor de Sistemas',
-              value: 'Desenvolvedor de Sistemas',
-              key: 2,
-            },
-            { label: 'Motorista', value: 'Motorista', key: 3 },
-          ]}
+          items={dataProfessions}
         />
         <FormLabeledSwitch
           label="Cadastro ativo"
