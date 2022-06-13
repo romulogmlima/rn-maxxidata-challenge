@@ -3,12 +3,12 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 
 import Button from '../../components/Buttons/Button';
+import FormLabeledSwitch from '../../components/FormLabeledSwitch';
 import Input from '../../components/Input';
 import MaskedInput from '../../components/MaskedInput';
 import Picker from '../../components/Picker';
 import Wrapper from '../../components/Wrapper';
 import { validationSchema } from '../../validations';
-import { BasicSwitch, ContainerSwitch, LabelSwitch } from './styles';
 
 const initialValues = {
   nome: '',
@@ -93,13 +93,11 @@ const RegisterProfessional = () => {
             { label: 'Motorista', value: 'Motorista', key: 3 },
           ]}
         />
-        <ContainerSwitch>
-          <LabelSwitch>Cadastro ativo</LabelSwitch>
-          <BasicSwitch
-            value={values.situacao}
-            onValueChange={(value) => setFieldValue('situacao', value)}
-          />
-        </ContainerSwitch>
+        <FormLabeledSwitch
+          label="Cadastro ativo"
+          value={values.situacao}
+          onValueChange={(value) => setFieldValue('situacao', value)}
+        />
 
         <Button
           title="Cadastrar"

@@ -2,10 +2,10 @@ import { useFormik } from 'formik';
 import React from 'react';
 
 import Button from '../../components/Buttons/Button';
+import FormLabeledSwitch from '../../components/FormLabeledSwitch';
 import Input from '../../components/Input';
 import Wrapper from '../../components/Wrapper';
 import { schemaRegisterProfession } from '../../validations';
-import { BasicSwitch, ContainerSwitch, LabelSwitch } from './styles';
 
 const initialValues = {
   descricao: '',
@@ -46,13 +46,12 @@ const RegisterProfession = () => {
         error={touched.descricao && errors.descricao}
         autoCapitalize="words"
       />
-      <ContainerSwitch>
-        <LabelSwitch>Cadastro ativo</LabelSwitch>
-        <BasicSwitch
-          value={values.situacao}
-          onValueChange={(value) => setFieldValue('situacao', value)}
-        />
-      </ContainerSwitch>
+      <FormLabeledSwitch
+        label="Cadastro ativo"
+        value={values.situacao}
+        onValueChange={(value) => setFieldValue('situacao', value)}
+      />
+
       <Button
         title="Cadastrar"
         onPress={handleSubmit}
