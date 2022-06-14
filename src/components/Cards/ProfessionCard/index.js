@@ -14,9 +14,9 @@ import {
 const ProfessionCard = ({ item, onPressDelete, onPressEdit }) => (
   <Container>
     <Header>
-      <Description>{item.descricao}</Description>
-      <Badge isActive={item.situacao}>
-        <BadgeLabel>{item.situacao ? 'Ativo' : 'Inativo'}</BadgeLabel>
+      <Description>{item.description}</Description>
+      <Badge isActive={item.status}>
+        <BadgeLabel>{item.status ? 'Ativo' : 'Inativo'}</BadgeLabel>
       </Badge>
     </Header>
     <ContainerDeleteButton onPress={onPressDelete}>

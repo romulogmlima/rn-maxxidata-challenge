@@ -25,7 +25,7 @@ const ListProfessions = () => {
 
   const filteredListProfessions = useMemo(() => {
     return listProfessions.filter((item) =>
-      item.descricao.toUpperCase().includes(search.toUpperCase())
+      item.description.toUpperCase().includes(search.toUpperCase())
     );
   }, [listProfessions, search]);
 

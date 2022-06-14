@@ -13,11 +13,11 @@ const menuItems = [
     navigateTo: 'RegisterProfessional',
     params: {
       initialValues: {
-        nome: '',
-        telefone: '',
+        fullName: '',
+        phoneNumber: '',
         email: '',
-        tipoDeProfissional: '',
-        situacao: true,
+        professionId: '',
+        status: true,
       },
     },
   },
@@ -35,8 +35,8 @@ const menuItems = [
     navigateTo: 'RegisterProfession',
     params: {
       initialValues: {
-        descricao: '',
-        situacao: true,
+        description: '',
+        status: true,
       },
     },
   },

@@ -37,16 +37,16 @@ const RegisterProfession = ({ route }) => {
       <Input
         label="Descrição *"
         placeholder="Ex: Motorista"
-        onChangeText={handleChange('descricao')}
-        onBlur={handleBlur('descricao')}
-        value={values.descricao}
-        error={touched.descricao && errors.descricao}
+        onChangeText={handleChange('description')}
+        onBlur={handleBlur('description')}
+        value={values.description}
+        error={touched.description && errors.description}
         autoCapitalize="words"
       />
       <FormLabeledSwitch
         label="Cadastro ativo"
-        value={values.situacao}
-        onValueChange={(value) => setFieldValue('situacao', value)}
+        value={values.status}
+        onValueChange={(value) => setFieldValue('status', value)}
       />
       <Button
         title="Cadastrar"
