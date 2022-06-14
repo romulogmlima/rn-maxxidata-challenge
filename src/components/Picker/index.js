@@ -1,12 +1,13 @@
 import React from 'react';
+import RNPickerSelect from 'react-native-picker-select';
 
-import { Container, CustomPicker, ErrorMessage, Label } from './styles';
+import { Container, ErrorMessage, Label } from './styles';
 
 const Picker = ({ label, error, ...otherProps }) => (
   <>
     <Label>{label}</Label>
     <Container>
-      <CustomPicker {...otherProps} />
+      <RNPickerSelect {...otherProps} />
     </Container>
     {error && <ErrorMessage>{error}</ErrorMessage>}
   </>
