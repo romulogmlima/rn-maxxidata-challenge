@@ -12,10 +12,26 @@ const { Navigator, Screen } = createNativeStackNavigator();
 const AppRoutes = () => (
   <Navigator>
     <Screen name="Home" component={Home} options={{ headerShown: false }} />
-    <Screen name="ListProfessionals" component={ListProfessionals} />
-    <Screen name="ListProfessions" component={ListProfessions} />
-    <Screen name="RegisterProfessional" component={RegisterProfessional} />
-    <Screen name="RegisterProfession" component={RegisterProfession} />
+    <Screen
+      name="ListProfessionals"
+      component={ListProfessionals}
+      options={{ title: 'Lista de Profissionais' }}
+    />
+    <Screen
+      name="ListProfessions"
+      component={ListProfessions}
+      options={{ title: 'Lista de Profissões' }}
+    />
+    <Screen
+      name="RegisterProfessional"
+      component={RegisterProfessional}
+      options={{ title: 'Cadastrar Profissional' }}
+    />
+    <Screen
+      name="RegisterProfession"
+      component={RegisterProfession}
+      options={{ title: 'Cadastrar Profissão' }}
+    />
   </Navigator>
 );
 
