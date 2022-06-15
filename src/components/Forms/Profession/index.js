@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import React from 'react';
 import { ScrollView } from 'react-native';
 
-import { schemaRegisterProfession } from '../../../validations';
+import { schemaFormProfession } from '../../../validations';
 import Button from '../../Buttons/Button';
 import FormLabeledSwitch from '../../FormLabeledSwitch';
 import Input from '../../Input';
@@ -10,7 +10,7 @@ import Input from '../../Input';
 const FormProfession = ({ initialValues, onSubmit, submitButtonTitle }) => {
   const formik = useFormik({
     initialValues,
-    validationSchema: schemaRegisterProfession,
+    validationSchema: schemaFormProfession,
     onSubmit,
   });
 
