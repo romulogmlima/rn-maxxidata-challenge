@@ -8,7 +8,7 @@ import { Content, MenuList } from './styles';
 const menuItems = [
   {
     id: 1,
-    title: 'Adicionar Profissional',
+    title: 'Cadastrar Profissional',
     icon: 'user-plus',
     navigateTo: 'RegisterProfessional',
   },
@@ -20,7 +20,7 @@ const menuItems = [
   },
   {
     id: 3,
-    title: 'Adicionar Profissão',
+    title: 'Cadastrar Profissão',
     icon: 'user-plus',
     navigateTo: 'RegisterProfession',
   },

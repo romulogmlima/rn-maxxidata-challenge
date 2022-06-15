@@ -1,12 +1,18 @@
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
   width: 100%;
-  height: 60px;
+  height: 100px;
   padding: 10px;
   background-color: #fff;
   margin-bottom: 15px;
   border-left-width: 10px;
+  justify-content: space-between;
+`;
+
+export const Header = styled.View`
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -32,4 +38,12 @@ export const Description = styled.Text`
   font-size: 16px;
   font-weight: bold;
   flex: 6;
+`;
+
+export const ContainerDeleteButton = styled.TouchableOpacity``;
+
+export const ContainerEditButton = styled.TouchableOpacity``;
+
+export const Icon = styled(MaterialCommunityIcons)`
+  font-size: 30px;
 `;

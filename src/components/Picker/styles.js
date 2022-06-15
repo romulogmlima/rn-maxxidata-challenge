@@ -1,4 +1,3 @@
-import RNPickerSelect from 'react-native-picker-select';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
@@ -12,8 +11,6 @@ export const Label = styled.Text`
   margin-bottom: 5px;
   font-size: 16px;
 `;
-
-export const CustomPicker = styled(RNPickerSelect).attrs(() => ({}))``;
 
 export const ErrorMessage = styled.Text`
   color: red;

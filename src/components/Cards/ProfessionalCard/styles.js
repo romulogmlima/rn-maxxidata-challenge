@@ -1,3 +1,4 @@
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
@@ -39,3 +40,11 @@ export const Name = styled.Text`
 `;
 
 export const Label = styled.Text``;
+
+export const ContainerDeleteButton = styled.TouchableOpacity``;
+
+export const ContainerEditButton = styled.TouchableOpacity``;
+
+export const Icon = styled(MaterialCommunityIcons)`
+  font-size: 30px;
+`;
