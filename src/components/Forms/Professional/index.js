@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { ScrollView } from 'react-native';
 
 import { api } from '../../../services';
-import { validationSchema } from '../../../validations';
+import { schemaFormProfessional } from '../../../validations';
 import Button from '../../Buttons/Button';
 import FormLabeledSwitch from '../../FormLabeledSwitch';
 import Input from '../../Input';
@@ -24,7 +24,7 @@ const FormProfessional = ({ initialValues, onSubmit, submitButtonTitle }) => {
 
   const formik = useFormik({
     initialValues,
-    validationSchema,
+    validationSchema: schemaFormProfessional,
     onSubmit,
   });
 
