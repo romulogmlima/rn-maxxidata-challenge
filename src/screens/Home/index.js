@@ -8,44 +8,27 @@ import { Content, MenuList } from './styles';
 const menuItems = [
   {
     id: 1,
-    title: 'Adicionar Profissional',
+    title: 'Cadastrar Profissional',
     icon: 'user-plus',
     navigateTo: 'RegisterProfessional',
-    params: {
-      initialValues: {
-        fullName: '',
-        phoneNumber: '',
-        email: '',
-        professionId: '',
-        status: true,
-      },
-    },
   },
   {
     id: 2,
     title: 'Listar Profissionais',
     icon: 'list',
     navigateTo: 'ListProfessionals',
-    params: null,
   },
   {
     id: 3,
-    title: 'Adicionar Profissão',
+    title: 'Cadastrar Profissão',
     icon: 'user-plus',
     navigateTo: 'RegisterProfession',
-    params: {
-      initialValues: {
-        description: '',
-        status: true,
-      },
-    },
   },
   {
     id: 4,
     title: 'Listar Profissões',
     icon: 'list',
     navigateTo: 'ListProfessions',
-    params: null,
   },
 ];
 
@@ -61,7 +44,7 @@ const Home = () => {
           renderItem={({ item }) => (
             <MenuButton
               {...item}
-              onPress={() => navigation.navigate(item.navigateTo, item.params)}
+              onPress={() => navigation.navigate(item.navigateTo)}
             />
           )}
           numColumns={2}
