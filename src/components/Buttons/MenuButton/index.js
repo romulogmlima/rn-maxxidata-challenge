@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Container, Icon, Title } from './styles';
+import { Container, Icon, Label } from './styles';
 
 const MenuButton = ({ title, icon, onPress }) => (
   <Container onPress={onPress}>
     <Icon name={icon} />
-    <Title>{title}</Title>
+    <Label>{title}</Label>
   </Container>
 );
 
