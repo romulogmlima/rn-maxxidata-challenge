@@ -1,14 +1,12 @@
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Card = styled.View`
   width: 100%;
-  height: 100px;
-  padding: 10px;
-  background-color: #fff;
+  padding: 20px;
+  background-color: #ffffff;
   margin-bottom: 15px;
-  border-left-width: 10px;
-  justify-content: space-between;
+  border-radius: 10px;
 `;
 
 export const Header = styled.View`
@@ -19,30 +17,42 @@ export const Header = styled.View`
 `;
 
 export const Badge = styled.View`
-  height: 20px;
   background-color: ${({ isActive }) => (isActive ? 'green' : 'red')};
   border-radius: 10px;
-  padding: 2px 4px;
+  padding: 3px 8px;
   justify-content: center;
   align-items: center;
-  flex: 1;
+`;
+
+export const ContainerActions = styled.View`
+  flex-direction: row;
 `;
 
 export const BadgeLabel = styled.Text`
   color: #fff;
-  font-weight: bold;
   font-size: 12px;
 `;
 
 export const Description = styled.Text`
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
-  flex: 6;
+`;
+
+export const Footer = styled.View`
+  width: 100%;
+  flex-direction: row;
+  margin-top: 10px;
+`;
+
+export const TitleButton = styled.Text`
+  font-size: 15px;
 `;
 
 export const ContainerDeleteButton = styled.TouchableOpacity``;
 
-export const ContainerEditButton = styled.TouchableOpacity``;
+export const ContainerEditButton = styled.TouchableOpacity`
+  margin-right: 15px;
+`;
 
 export const Icon = styled(MaterialCommunityIcons)`
   font-size: 30px;
