@@ -1,15 +1,17 @@
+import { RFValue } from 'react-native-responsive-fontsize';
 import { Switch as BasicSwitch } from 'react-native-switch';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
+  width: 100%;
+  margin: 30px 0;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 30px 0;
 `;
 
 export const Label = styled.Text`
-  font-size: 16px;
+  font-size: ${RFValue(14)}px;
   color: #232840;
   font-weight: bold;
 `;
