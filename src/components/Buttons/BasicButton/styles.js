@@ -1,3 +1,4 @@
+import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
@@ -9,13 +10,13 @@ export const Container = styled.TouchableOpacity`
   border-radius: 10px;
 `;
 
-export const Title = styled.Text`
-  font-size: 16px;
+export const Label = styled.Text`
+  font-size: ${RFValue(14)}px;
   font-weight: bold;
   color: #ffffff;
 `;
 
-export const CustomActivityIndicator = styled.ActivityIndicator.attrs(() => ({
+export const LoadingIndicator = styled.ActivityIndicator.attrs(() => ({
   size: 25,
   color: '#ffffff',
 }))``;
