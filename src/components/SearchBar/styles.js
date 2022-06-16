@@ -6,9 +6,9 @@ export const Container = styled(TextInput).attrs(() => ({
 }))`
   width: 100%;
   padding: 18px 16px;
-  background-color: #fff;
+  background-color: #ffffff;
   color: #000;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 16px;
-  font-size: 14px;
+  font-size: 16px;
 `;
