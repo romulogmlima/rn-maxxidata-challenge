@@ -1,3 +1,4 @@
+import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
 export const Container = styled.Modal``;
@@ -19,7 +20,7 @@ export const ContainerButtons = styled.View`
 `;
 
 export const Message = styled.Text`
-  font-size: 30px;
+  font-size: ${RFValue(28)}px;
   font-weight: bold;
   text-align: center;
 `;

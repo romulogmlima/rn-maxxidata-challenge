@@ -1,6 +1,7 @@
+import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
-export const CustomModal = styled.Modal``;
+export const Container = styled.Modal``;
 
 export const Content = styled.View`
   flex: 1;
@@ -9,17 +10,17 @@ export const Content = styled.View`
   justify-content: center;
 `;
 
-export const ContainerButtons = styled.View`
+export const ContainerButton = styled.View`
   width: 100%;
+  margin-top: 30px;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 30px;
   position: absolute;
   bottom: 25px;
 `;
 
 export const Message = styled.Text`
-  font-size: 30px;
+  font-size: ${RFValue(28)}px;
   font-weight: bold;
   text-align: center;
 `;

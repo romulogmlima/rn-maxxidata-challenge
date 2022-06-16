@@ -1,11 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import Button from '../Buttons/Button';
+import BasicButton from '../../Buttons/BasicButton';
 import { ContainerButtons, Content, Container, Message } from './styles';
 
-const Dialog = ({
+const ConfirmDialog = ({
   visible,
+  message,
   titleSecondaryButton,
   onPressSecondaryButton,
   titlePrimaryButton,
@@ -13,20 +14,23 @@ const Dialog = ({
 }) => (
   <Container visible={visible} animationType="fade">
     <Content>
-      <Message>{`Deseja deletar o\n registro?`}</Message>
+      <Message>{message}</Message>
       <ContainerButtons>
         <View style={{ flex: 1, marginRight: 20 }}>
-          <Button
+          <BasicButton
             title={titleSecondaryButton}
             onPress={onPressSecondaryButton}
           />
         </View>
         <View style={{ flex: 1 }}>
-          <Button title={titlePrimaryButton} onPress={onPressPrimaryButton} />
+          <BasicButton
+            title={titlePrimaryButton}
+            onPress={onPressPrimaryButton}
+          />
         </View>
       </ContainerButtons>
     </Content>
   </Container>
 );
 
-export default Dialog;
+export default ConfirmDialog;
