@@ -16,8 +16,8 @@ const RegisterProfession = () => {
   const [isDialogVisible, setDialogVisible] = useState(false);
 
   const onSubmit = async (values) => {
-    // const response = await api.post('/professions', values);
-    // setDialogVisible(true);
+    await api.post('/professions', values);
+    setDialogVisible(true);
   };
 
   return (
