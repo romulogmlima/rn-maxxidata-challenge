@@ -3,7 +3,13 @@ import React from 'react';
 
 import MenuButton from '../../components/Buttons/MenuButton';
 import Wrapper from '../../components/Wrapper';
-import { Content, MenuList } from './styles';
+import {
+  Content,
+  GreetingContainer,
+  MenuContainer,
+  SubTitle,
+  Title,
+} from './styles';
 
 const menuItems = [
   {
@@ -38,17 +44,21 @@ const Home = () => {
   return (
     <Wrapper>
       <Content>
-        <MenuList
-          data={menuItems}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <MenuButton
-              {...item}
-              onPress={() => navigation.navigate(item.navigateTo)}
-            />
-          )}
-          numColumns={2}
-        />
+        <GreetingContainer>
+          <Title>Olá, Rômulo!</Title>
+          <SubTitle>O que você deseja fazer?</SubTitle>
+        </GreetingContainer>
+        <MenuContainer>
+          {menuItems.map((item) => {
+            return (
+              <MenuButton
+                key={item.id}
+                onPress={() => navigation.navigate(item.navigateTo)}
+                {...item}
+              />
+            );
+          })}
+        </MenuContainer>
       </Content>
     </Wrapper>
   );
