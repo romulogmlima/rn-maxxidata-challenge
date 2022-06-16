@@ -5,7 +5,13 @@ export const Container = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
+  margin: 30px 0;
+`;
+
+export const Label = styled.Text`
+  font-size: 16px;
+  color: #232840;
+  font-weight: bold;
 `;
 
 export const Switch = styled(BasicSwitch).attrs(() => ({
@@ -15,7 +21,3 @@ export const Switch = styled(BasicSwitch).attrs(() => ({
   switchRightPx: 3,
   circleBorderWidth: 3,
 }))``;
-
-export const Label = styled.Text`
-  font-size: 16px;
-`;
