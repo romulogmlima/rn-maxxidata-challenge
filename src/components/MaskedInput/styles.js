@@ -8,6 +8,8 @@ export const Container = styled.View`
 export const Label = styled.Text`
   margin-bottom: 5px;
   font-size: 16px;
+  font-weight: bold;
+  color: #232840;
 `;
 
 export const TextField = styled(TextInputMask).attrs(() => ({
@@ -15,9 +17,9 @@ export const TextField = styled(TextInputMask).attrs(() => ({
 }))`
   width: 100%;
   padding: 15px 15px;
-  background-color: #fff;
+  background-color: #ffffff;
   color: #000;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 16px;
 `;
 
