@@ -4,9 +4,9 @@ import styled from 'styled-components/native';
 export const Container = styled.TouchableOpacity`
   width: 100%;
   height: 120px;
-  margin-bottom: 20px;
-  padding: 15px;
   justify-content: space-between;
+  margin-bottom: ${({ theme }) => theme.spacing.m}px;
+  padding: ${({ theme }) => theme.spacing.s}px;
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 

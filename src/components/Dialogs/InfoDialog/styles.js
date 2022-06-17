@@ -4,14 +4,14 @@ export const Container = styled.Modal``;
 
 export const Content = styled.View`
   flex: 1;
-  padding: 25px;
+  padding: ${({ theme }) => theme.spacing.l}px;
   align-items: center;
   justify-content: center;
 `;
 
 export const ContainerButton = styled.View`
   width: 100%;
-  margin-top: 30px;
+  margin-top: ${({ theme }) => theme.spacing.xl}px;
   flex-direction: row;
   justify-content: space-between;
   position: absolute;

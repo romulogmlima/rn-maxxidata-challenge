@@ -4,7 +4,7 @@ export const Container = styled.Modal``;
 
 export const Content = styled.View`
   flex: 1;
-  padding: 25px;
+  padding: ${({ theme }) => theme.spacing.l}px;
   align-items: center;
   justify-content: center;
 `;
@@ -13,7 +13,7 @@ export const ContainerButtons = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: ${({ theme }) => theme.spacing.xl}px;
   position: absolute;
   bottom: 25px;
 `;

@@ -3,9 +3,9 @@ import styled from 'styled-components/native';
 
 export const Card = styled.View`
   width: 100%;
-  padding: 15px;
+  padding: ${({ theme }) => theme.spacing.s}px;
   background-color: ${({ theme }) => theme.colors.light};
-  margin-bottom: 15px;
+  margin-bottom: ${({ theme }) => theme.spacing.s}px;
   border-radius: 10px;
 `;
 
@@ -23,7 +23,7 @@ export const ContainerActions = styled.View`
 export const ContainerDeleteButton = styled.TouchableOpacity``;
 
 export const ContainerEditButton = styled.TouchableOpacity`
-  margin-right: 15px;
+  margin-right: ${({ theme }) => theme.spacing.s}px;
 `;
 
 export const Icon = styled(MaterialCommunityIcons)`
@@ -38,14 +38,15 @@ export const Description = styled.Text`
 export const Footer = styled.View`
   width: 100%;
   flex-direction: row;
-  margin-top: 10px;
+  margin-top: ${({ theme }) => theme.spacing.xs}px;
 `;
 
 export const Badge = styled.View`
   background-color: ${({ isActive, theme }) =>
     isActive ? theme.colors.success : theme.colors.error};
   border-radius: 10px;
-  padding: 3px 8px;
+  padding: ${({ theme }) => theme.spacing.xxs}px
+    ${({ theme }) => theme.spacing.xs}px;
   justify-content: center;
   align-items: center;
 `;
