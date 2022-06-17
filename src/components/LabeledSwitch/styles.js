@@ -20,6 +20,5 @@ export const Switch = styled(BasicSwitch).attrs(({ theme }) => ({
   inActiveText: '',
   switchLeftPx: 3,
   switchRightPx: 3,
-  circleBorderWidth: 3,
-  backgroundActive: theme.colors.success,
+  backgroundActive: theme.colors.primary,
 }))``;
