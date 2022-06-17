@@ -1,25 +1,26 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 
+import InfoDialog from '../../../components/Dialogs/InfoDialog';
 import FormProfessional from '../../../components/Forms/Professional';
-import InfoDialog from '../../../components/InfoDialog';
 import Wrapper from '../../../components/Wrapper';
-import { api } from '../../../services';
+import useProfessional from '../../../hooks/useProfessional';
 
 const initialValues = {
   fullName: '',
   phoneNumber: '',
   email: '',
   professionId: '',
-  status: false,
+  status: true,
 };
 
 const RegisterProfessional = () => {
+  const { create } = useProfessional();
   const { goBack } = useNavigation();
   const [isDialogVisible, setDialogVisible] = useState(false);
 
   const onSubmit = async (values) => {
-    await api.post('/professionals', values);
+    create(values);
     setDialogVisible(true);
   };
 
@@ -32,9 +33,9 @@ const RegisterProfessional = () => {
       />
       <InfoDialog
         visible={isDialogVisible}
-        titlePrimaryButton="Voltar para tela inicial"
+        titleButton="Voltar para tela inicial"
         message={`Profissional cadastrado\n com sucesso`}
-        onPressPrimaryButton={() => {
+        onPress={() => {
           goBack();
           setDialogVisible(false);
         }}

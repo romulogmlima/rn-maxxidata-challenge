@@ -2,25 +2,21 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useMemo, useState } from 'react';
 
 import ProfessionCard from '../../../components/Cards/ProfessionCard';
-import Dialog from '../../../components/Dialog';
-import SearchBar from '../../../components/SearchBar';
+import ConfirmDialog from '../../../components/Dialogs/ConfirmDialog';
+import SearchBar from '../../../components/Inputs/SearchBar';
 import Wrapper from '../../../components/Wrapper';
-import { api } from '../../../services';
-import { List, MessageEmptyList } from './styles';
+import useProfession from '../../../hooks/useProfession';
+import { List, EmptyListMessage } from './styles';
 
 const ListProfessions = () => {
+  const { findAll, destroy, listProfessions } = useProfession();
   const navigation = useNavigation();
   const [search, setSearch] = useState('');
-  const [listProfessions, setListProfessions] = useState([]);
   const [isDialogVisible, setDialogVisible] = useState(false);
   const [itemForDelete, setItemForDelete] = useState({});
 
   useEffect(() => {
-    const getProfessions = async () => {
-      const response = await api.get('/professions');
-      setListProfessions(response);
-    };
-    getProfessions();
+    findAll();
   }, []);
 
   const filteredListProfessions = useMemo(() => {
@@ -29,9 +25,21 @@ const ListProfessions = () => {
     );
   }, [listProfessions, search]);
 
-  const deleteProfessionById = async (id) => {
-    await api.delete(`/professions/${id}`);
-  };
+  const getRenderItem = (item) => (
+    <ProfessionCard
+      item={item}
+      onPressDelete={() => {
+        setItemForDelete(item);
+        setDialogVisible(true);
+        setSearch('');
+      }}
+      onPressEdit={() =>
+        navigation.navigate('EditProfession', {
+          initialValues: item,
+        })
+      }
+    />
+  );
 
   return (
     <Wrapper>
@@ -39,21 +47,7 @@ const ListProfessions = () => {
         data={filteredListProfessions}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => (
-          <ProfessionCard
-            item={item}
-            onPressDelete={() => {
-              setItemForDelete(item);
-              setDialogVisible(true);
-              setSearch('');
-            }}
-            onPressEdit={() =>
-              navigation.navigate('EditProfession', {
-                initialValues: item,
-              })
-            }
-          />
-        )}
+        renderItem={({ item }) => getRenderItem(item)}
         ListHeaderComponent={
           <SearchBar
             value={search}
@@ -62,16 +56,17 @@ const ListProfessions = () => {
           />
         }
         ListEmptyComponent={
-          <MessageEmptyList>Ops! Nenhum resultado encontrado.</MessageEmptyList>
+          <EmptyListMessage>Ops! Nenhum resultado encontrado.</EmptyListMessage>
         }
       />
-      <Dialog
+      <ConfirmDialog
         visible={isDialogVisible}
+        message={`Deseja deletar o\n registro?`}
         titleSecondaryButton="Cancelar"
         titlePrimaryButton="Deletar"
         onPressSecondaryButton={() => setDialogVisible(false)}
         onPressPrimaryButton={() => {
-          deleteProfessionById(itemForDelete.id);
+          destroy(itemForDelete.id);
           setDialogVisible(false);
         }}
       />

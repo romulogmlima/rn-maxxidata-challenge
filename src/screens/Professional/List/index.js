@@ -2,26 +2,21 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useMemo, useState } from 'react';
 
 import ProfessionalCard from '../../../components/Cards/ProfessionalCard';
-import Dialog from '../../../components/Dialog';
-import SearchBar from '../../../components/SearchBar';
+import ConfirmDialog from '../../../components/Dialogs/ConfirmDialog';
+import SearchBar from '../../../components/Inputs/SearchBar';
 import Wrapper from '../../../components/Wrapper';
-import { api } from '../../../services';
-import { List, MessageEmptyList } from './styles';
+import useProfessional from '../../../hooks/useProfessional';
+import { List, EmptyListMessage } from './styles';
 
 const ListProfessionals = () => {
   const navigation = useNavigation();
   const [search, setSearch] = useState('');
-  const [listProfessionals, setListProfessionals] = useState([]);
   const [isDialogVisible, setDialogVisible] = useState(false);
   const [itemForDelete, setItemForDelete] = useState({});
+  const { findAll, destroy, listProfessionals } = useProfessional();
 
   useEffect(() => {
-    const getProfessionals = async () => {
-      const response = await api.get('/professionals?_expand=profession');
-      setListProfessionals(response);
-    };
-
-    getProfessionals();
+    findAll();
   }, []);
 
   const filteredListProfessionals = useMemo(() => {
@@ -30,9 +25,22 @@ const ListProfessionals = () => {
     );
   }, [listProfessionals, search]);
 
-  const deleteProfessionalById = async (id) => {
-    await api.delete(`/professionals/${id}`);
-  };
+  const getRenderItem = (item) => (
+    <ProfessionalCard
+      item={item}
+      onPressDelete={() => {
+        setItemForDelete(item);
+        setDialogVisible(true);
+        setSearch('');
+      }}
+      onPressEdit={() => {
+        setSearch('');
+        navigation.navigate('EditProfessional', {
+          initialValues: item,
+        });
+      }}
+    />
+  );
 
   return (
     <Wrapper>
@@ -40,22 +48,7 @@ const ListProfessionals = () => {
         data={filteredListProfessionals}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => (
-          <ProfessionalCard
-            item={item}
-            onPressDelete={() => {
-              setItemForDelete(item);
-              setDialogVisible(true);
-              setSearch('');
-            }}
-            onPressEdit={() => {
-              setSearch('');
-              navigation.navigate('EditProfessional', {
-                initialValues: item,
-              });
-            }}
-          />
-        )}
+        renderItem={({ item }) => getRenderItem(item)}
         ListHeaderComponent={
           <SearchBar
             value={search}
@@ -64,16 +57,17 @@ const ListProfessionals = () => {
           />
         }
         ListEmptyComponent={
-          <MessageEmptyList>Ops! Nenhum resultado encontrado.</MessageEmptyList>
+          <EmptyListMessage>Ops! Nenhum resultado encontrado.</EmptyListMessage>
         }
       />
-      <Dialog
+      <ConfirmDialog
         visible={isDialogVisible}
+        message={`Deseja deletar o\n registro?`}
         titleSecondaryButton="Cancelar"
         titlePrimaryButton="Deletar"
         onPressSecondaryButton={() => setDialogVisible(false)}
         onPressPrimaryButton={() => {
-          deleteProfessionalById(itemForDelete.id);
+          destroy(itemForDelete.id);
           setDialogVisible(false);
         }}
       />

@@ -16,21 +16,18 @@ export const Header = styled.View`
   align-items: center;
 `;
 
-export const Badge = styled.View`
-  background-color: ${({ isActive }) => (isActive ? 'green' : 'red')};
-  border-radius: 10px;
-  padding: 3px 8px;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const ContainerActions = styled.View`
   flex-direction: row;
 `;
 
-export const BadgeLabel = styled.Text`
-  color: #fff;
-  font-size: 12px;
+export const ContainerDeleteButton = styled.TouchableOpacity``;
+
+export const ContainerEditButton = styled.TouchableOpacity`
+  margin-right: 15px;
+`;
+
+export const Icon = styled(MaterialCommunityIcons)`
+  font-size: 30px;
 `;
 
 export const Description = styled.Text`
@@ -44,16 +41,15 @@ export const Footer = styled.View`
   margin-top: 10px;
 `;
 
-export const TitleButton = styled.Text`
-  font-size: 15px;
+export const Badge = styled.View`
+  background-color: ${({ isActive }) => (isActive ? 'green' : 'red')};
+  border-radius: 10px;
+  padding: 3px 8px;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const ContainerDeleteButton = styled.TouchableOpacity``;
-
-export const ContainerEditButton = styled.TouchableOpacity`
-  margin-right: 15px;
-`;
-
-export const Icon = styled(MaterialCommunityIcons)`
-  font-size: 30px;
+export const BadgeLabel = styled.Text`
+  color: #fff;
+  font-size: 12px;
 `;
