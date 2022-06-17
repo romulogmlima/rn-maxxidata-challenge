@@ -1,42 +1,41 @@
-const palette = {
-  purple: '#5A31F4',
-  green: '#0ECD9D',
-  red: '#CD0E61',
-  black: '#0B0B0B',
-  white: '#F0F2F3',
-};
+import { RFValue } from 'react-native-responsive-fontsize';
 
-// #301551
-// #492B7C
-// #ED8A0A
-// #F6D912
-// #FFFFFF
+const palette = {
+  ebonyClay: '#232840',
+  mySin: '#FFB726',
+  white: '#ffffff',
+  japaneseLaurel: '#04810F',
+  alizarinCrimson: '#E52424',
+  silver: '#C7C7C7',
+  mystic: '#dce7ec',
+};
 
 export const theme = {
   colors: {
-    background: palette.white,
-    foreground: palette.black,
-    primary: palette.purple,
-    success: palette.green,
-    danger: palette.red,
-    failure: palette.red,
+    primary: palette.ebonyClay,
+    secondary: palette.mySin,
+    background: palette.mystic,
+    foreground: palette.ebonyClay,
+    success: palette.japaneseLaurel,
+    error: palette.alizarinCrimson,
+    light: palette.white,
+    disabled: palette.silver,
   },
   spacing: {
-    xs: 4,
-    s: 8,
-    m: 16,
-    l: 24,
-    xl: 40,
+    xxs: 3,
+    xs: 5,
+    s: 15,
+    m: 20,
+    l: 25,
+    xl: 30,
   },
-  textVariants: {
-    header: {
-      fontFamily: 'Raleway',
-      fontSize: 36,
-      fontWeight: 'bold',
-    },
-    body: {
-      fontFamily: 'Merriweather',
-      fontSize: 16,
+  fonts: {
+    sizes: {
+      xs: RFValue(12),
+      s: RFValue(14),
+      m: RFValue(16),
+      l: RFValue(18),
+      xl: RFValue(28),
     },
   },
 };

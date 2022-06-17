@@ -3,29 +3,35 @@ import React from 'react';
 import {
   Badge,
   BadgeLabel,
-  Container,
+  Card,
+  ContainerActions,
   ContainerDeleteButton,
   ContainerEditButton,
   Description,
+  Footer,
   Header,
   Icon,
 } from './styles';
 
 const ProfessionCard = ({ item, onPressDelete, onPressEdit }) => (
-  <Container>
+  <Card>
     <Header>
       <Description>{item.description}</Description>
-      <Badge isActive={item.status}>
-        <BadgeLabel>{item.status ? 'Ativo' : 'Inativo'}</BadgeLabel>
-      </Badge>
+      <ContainerActions>
+        <ContainerEditButton onPress={onPressEdit}>
+          <Icon name="account-edit" />
+        </ContainerEditButton>
+        <ContainerDeleteButton onPress={onPressDelete}>
+          <Icon name="delete" />
+        </ContainerDeleteButton>
+      </ContainerActions>
     </Header>
-    <ContainerDeleteButton onPress={onPressDelete}>
-      <Icon name="delete" />
-    </ContainerDeleteButton>
-    <ContainerEditButton onPress={onPressEdit}>
-      <Icon name="square-edit-outline" />
-    </ContainerEditButton>
-  </Container>
+    <Footer>
+      <Badge isActive={item.status}>
+        <BadgeLabel>Cadastro {item.status ? 'Ativo' : 'Inativo'}</BadgeLabel>
+      </Badge>
+    </Footer>
+  </Card>
 );
 
 export default ProfessionCard;

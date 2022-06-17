@@ -2,21 +2,20 @@ import Feather from '@expo/vector-icons/Feather';
 import styled from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
-  width: 40%;
+  width: 100%;
   height: 120px;
-  border-radius: 15px;
-  background-color: #492b7c;
-  margin-bottom: 20px;
   justify-content: space-between;
-  padding: 10px;
-`;
-
-export const Title = styled.Text`
-  font-size: 18px;
-  color: #ffffff;
+  margin-bottom: ${({ theme }) => theme.spacing.m}px;
+  padding: ${({ theme }) => theme.spacing.s}px;
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const Icon = styled(Feather)`
-  font-size: 30px;
-  color: #ffffff;
+  font-size: ${({ theme }) => theme.fonts.sizes.xl}px;
+  color: ${({ theme }) => theme.colors.secondary};
+`;
+
+export const Label = styled.Text`
+  font-size: ${({ theme }) => theme.fonts.sizes.l}px;
+  color: ${({ theme }) => theme.colors.light};
 `;

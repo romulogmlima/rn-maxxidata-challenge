@@ -1,14 +1,12 @@
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Card = styled.View`
   width: 100%;
-  height: 100px;
-  padding: 10px;
-  background-color: #fff;
-  margin-bottom: 15px;
-  border-left-width: 10px;
-  justify-content: space-between;
+  padding: ${({ theme }) => theme.spacing.s}px;
+  background-color: ${({ theme }) => theme.colors.light};
+  margin-bottom: ${({ theme }) => theme.spacing.s}px;
+  border-radius: 10px;
 `;
 
 export const Header = styled.View`
@@ -18,32 +16,42 @@ export const Header = styled.View`
   align-items: center;
 `;
 
-export const Badge = styled.View`
-  height: 20px;
-  background-color: ${({ isActive }) => (isActive ? 'green' : 'red')};
-  border-radius: 10px;
-  padding: 2px 4px;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-`;
-
-export const BadgeLabel = styled.Text`
-  color: #fff;
-  font-weight: bold;
-  font-size: 12px;
-`;
-
-export const Description = styled.Text`
-  font-size: 16px;
-  font-weight: bold;
-  flex: 6;
+export const ContainerActions = styled.View`
+  flex-direction: row;
 `;
 
 export const ContainerDeleteButton = styled.TouchableOpacity``;
 
-export const ContainerEditButton = styled.TouchableOpacity``;
+export const ContainerEditButton = styled.TouchableOpacity`
+  margin-right: ${({ theme }) => theme.spacing.s}px;
+`;
 
 export const Icon = styled(MaterialCommunityIcons)`
-  font-size: 30px;
+  font-size: ${({ theme }) => theme.fonts.sizes.xl}px;
+`;
+
+export const Description = styled.Text`
+  font-size: ${({ theme }) => theme.fonts.sizes.l}px;
+  font-weight: bold;
+`;
+
+export const Footer = styled.View`
+  width: 100%;
+  flex-direction: row;
+  margin-top: ${({ theme }) => theme.spacing.xs}px;
+`;
+
+export const Badge = styled.View`
+  background-color: ${({ isActive, theme }) =>
+    isActive ? theme.colors.success : theme.colors.error};
+  border-radius: 10px;
+  padding: ${({ theme }) => theme.spacing.xxs}px
+    ${({ theme }) => theme.spacing.xs}px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const BadgeLabel = styled.Text`
+  color: ${({ theme }) => theme.colors.light};
+  font-size: ${({ theme }) => theme.fonts.sizes.xs}px;
 `;

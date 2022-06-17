@@ -3,9 +3,9 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 
 import { schemaFormProfession } from '../../../validations';
-import Button from '../../Buttons/Button';
-import FormLabeledSwitch from '../../FormLabeledSwitch';
-import Input from '../../Input';
+import BasicButton from '../../Buttons/BasicButton';
+import BasicInput from '../../Inputs/BasicInput';
+import LabeledSwitch from '../../LabeledSwitch';
 
 const FormProfession = ({ initialValues, onSubmit, submitButtonTitle }) => {
   const formik = useFormik({
@@ -28,7 +28,7 @@ const FormProfession = ({ initialValues, onSubmit, submitButtonTitle }) => {
 
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
-      <Input
+      <BasicInput
         label="Descrição *"
         placeholder="Ex: Motorista"
         onChangeText={handleChange('description')}
@@ -37,12 +37,12 @@ const FormProfession = ({ initialValues, onSubmit, submitButtonTitle }) => {
         error={touched.description && errors.description}
         autoCapitalize="words"
       />
-      <FormLabeledSwitch
+      <LabeledSwitch
         label="Cadastro ativo"
         value={values.status}
         onValueChange={(value) => setFieldValue('status', value)}
       />
-      <Button
+      <BasicButton
         title={submitButtonTitle}
         onPress={handleSubmit}
         isDisabled={!isValid || isSubmitting}

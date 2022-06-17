@@ -1,19 +1,20 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 
+import InfoDialog from '../../../components/Dialogs/InfoDialog';
 import FormProfession from '../../../components/Forms/Profession';
-import InfoDialog from '../../../components/InfoDialog';
 import Wrapper from '../../../components/Wrapper';
-import { api } from '../../../services';
+import useProfession from '../../../hooks/useProfession';
 
 const EditProfession = ({ route }) => {
+  const { update } = useProfession();
   const { goBack } = useNavigation();
   const [isDialogVisible, setDialogVisible] = useState(false);
 
   const { initialValues } = route.params;
 
   const onSubmit = async (values) => {
-    await api.put(`/professions/${values.id}`, values);
+    update(values.id, values);
     setDialogVisible(true);
   };
 
@@ -26,9 +27,9 @@ const EditProfession = ({ route }) => {
       />
       <InfoDialog
         visible={isDialogVisible}
-        titlePrimaryButton="Voltar para tela inicial"
+        titleButton="Voltar"
         message={`Profissão editada\n com sucesso`}
-        onPressPrimaryButton={() => {
+        onPress={() => {
           goBack();
           setDialogVisible(false);
         }}

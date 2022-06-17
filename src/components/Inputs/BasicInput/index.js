@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, ErrorMessage, Label, TextField } from './styles';
 
-const Input = ({ label, error, ...otherProps }) => (
+const BasicInput = ({ label, error, ...otherProps }) => (
   <Container>
     <Label>{label}</Label>
     <TextField {...otherProps} />
@@ -10,4 +10,4 @@ const Input = ({ label, error, ...otherProps }) => (
   </Container>
 );
 
-export default Input;
+export default BasicInput;

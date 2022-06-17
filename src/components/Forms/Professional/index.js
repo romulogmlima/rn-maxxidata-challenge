@@ -1,25 +1,20 @@
 import { useFormik } from 'formik';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { ScrollView } from 'react-native';
 
-import { api } from '../../../services';
+import useProfession from '../../../hooks/useProfession';
 import { schemaFormProfessional } from '../../../validations';
-import Button from '../../Buttons/Button';
-import FormLabeledSwitch from '../../FormLabeledSwitch';
-import Input from '../../Input';
-import MaskedInput from '../../MaskedInput';
+import BasicButton from '../../Buttons/BasicButton';
+import BasicInput from '../../Inputs/BasicInput';
+import MaskedInput from '../../Inputs/MaskedInput';
+import LabeledSwitch from '../../LabeledSwitch';
 import Picker from '../../Picker';
 
 const FormProfessional = ({ initialValues, onSubmit, submitButtonTitle }) => {
-  const [listProfessions, setListProfessions] = useState([]);
+  const { listProfessions, findAll } = useProfession();
 
   useEffect(() => {
-    const getProfessions = async () => {
-      const response = await api.get('/professions');
-      setListProfessions(response.data);
-    };
-
-    getProfessions();
+    findAll();
   }, []);
 
   const formik = useFormik({
@@ -54,7 +49,7 @@ const FormProfessional = ({ initialValues, onSubmit, submitButtonTitle }) => {
 
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
-      <Input
+      <BasicInput
         label="Nome completo *"
         placeholder="Maria da Silva"
         onChangeText={handleChange('fullName')}
@@ -78,7 +73,7 @@ const FormProfessional = ({ initialValues, onSubmit, submitButtonTitle }) => {
           dddMask: '(99) ',
         }}
       />
-      <Input
+      <BasicInput
         label="E-mail"
         placeholder="email@email.com"
         onChangeText={handleChange('email')}
@@ -89,21 +84,19 @@ const FormProfessional = ({ initialValues, onSubmit, submitButtonTitle }) => {
         autoCapitalize="none"
       />
       <Picker
-        value={
-          initialValues.professionId ? initialValues?.professionId : undefined
-        }
+        value={values.professionId}
         label="Profissão *"
         onValueChange={(value) => setFieldValue('professionId', value)}
         error={touched.professionId && errors.professionId}
         placeholder={{ label: 'Selecionar', value: '', key: 0 }}
         items={filteredlistProfessions}
       />
-      <FormLabeledSwitch
+      <LabeledSwitch
         label="Cadastro ativo"
         value={values.status}
         onValueChange={(value) => setFieldValue('status', value)}
       />
-      <Button
+      <BasicButton
         title={submitButtonTitle}
         onPress={handleSubmit}
         isDisabled={!isValid || isSubmitting}

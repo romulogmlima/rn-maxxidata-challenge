@@ -1,9 +1,10 @@
 import styled from 'styled-components/native';
 
-export const Content = styled.View`
-  flex: 1;
-  width: 100%;
-  justify-content: center;
-`;
-
 export const List = styled.FlatList``;
+
+export const EmptyListMessage = styled.Text`
+  margin-top: ${({ theme }) => theme.spacing.m}px;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: ${({ theme }) => theme.fonts.sizes.m}px;
+`;
