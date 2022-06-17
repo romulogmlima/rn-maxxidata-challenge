@@ -1,5 +1,4 @@
 import { TextInputMask } from 'react-native-masked-text';
-import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
@@ -8,24 +7,24 @@ export const Container = styled.View`
 
 export const Label = styled.Text`
   margin-bottom: 5px;
-  font-size: ${RFValue(14)}px;
   font-weight: bold;
-  color: #232840;
+  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const TextField = styled(TextInputMask).attrs(() => ({
-  placeholderTextColor: '#BABABA',
+export const TextField = styled(TextInputMask).attrs(({ theme }) => ({
+  placeholderTextColor: theme.colors.disabled,
 }))`
   width: 100%;
   padding: 15px 15px;
-  color: #000;
   border-radius: 10px;
-  font-size: ${RFValue(14)}px;
-  background-color: #ffffff;
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
+  background-color: ${({ theme }) => theme.colors.light};
 `;
 
 export const ErrorMessage = styled.Text`
-  color: red;
   margin-top: 5px;
-  font-size: ${RFValue(12)}px;
+  color: ${({ theme }) => theme.colors.error};
+  font-size: ${({ theme }) => theme.fonts.sizes.xs}px;
 `;

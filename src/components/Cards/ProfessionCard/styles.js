@@ -3,8 +3,8 @@ import styled from 'styled-components/native';
 
 export const Card = styled.View`
   width: 100%;
-  padding: 20px;
-  background-color: #ffffff;
+  padding: 15px;
+  background-color: ${({ theme }) => theme.colors.light};
   margin-bottom: 15px;
   border-radius: 10px;
 `;
@@ -27,11 +27,11 @@ export const ContainerEditButton = styled.TouchableOpacity`
 `;
 
 export const Icon = styled(MaterialCommunityIcons)`
-  font-size: 30px;
+  font-size: ${({ theme }) => theme.fonts.sizes.xl}px;
 `;
 
 export const Description = styled.Text`
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fonts.sizes.l}px;
   font-weight: bold;
 `;
 
@@ -42,7 +42,8 @@ export const Footer = styled.View`
 `;
 
 export const Badge = styled.View`
-  background-color: ${({ isActive }) => (isActive ? 'green' : 'red')};
+  background-color: ${({ isActive, theme }) =>
+    isActive ? theme.colors.success : theme.colors.error};
   border-radius: 10px;
   padding: 3px 8px;
   justify-content: center;
@@ -50,6 +51,6 @@ export const Badge = styled.View`
 `;
 
 export const BadgeLabel = styled.Text`
-  color: #fff;
-  font-size: 12px;
+  color: ${({ theme }) => theme.colors.light};
+  font-size: ${({ theme }) => theme.fonts.sizes.xs}px;
 `;

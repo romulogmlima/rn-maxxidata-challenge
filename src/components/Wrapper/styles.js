@@ -4,5 +4,5 @@ export const Container = styled.View`
   flex: 1;
   width: 100%;
   padding: 20px 20px 0;
-  background-color: #dce7ec;
+  background-color: ${({ theme }) => theme.colors.background};
 `;

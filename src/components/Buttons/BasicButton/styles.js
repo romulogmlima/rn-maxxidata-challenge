@@ -1,22 +1,22 @@
-import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
   width: 100%;
   height: 50px;
-  background-color: ${({ disabled }) => (disabled ? '#C7C7C7' : '#232840')};
+  background-color: ${({ disabled, theme }) =>
+    disabled ? theme.colors.disabled : theme.colors.primary};
   justify-content: center;
   align-items: center;
   border-radius: 10px;
 `;
 
 export const Label = styled.Text`
-  font-size: ${RFValue(14)}px;
+  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
   font-weight: bold;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.light};
 `;
 
-export const LoadingIndicator = styled.ActivityIndicator.attrs(() => ({
+export const LoadingIndicator = styled.ActivityIndicator.attrs(({ theme }) => ({
   size: 25,
-  color: '#ffffff',
+  color: theme.colors.light,
 }))``;

@@ -1,5 +1,4 @@
 import Feather from '@expo/vector-icons/Feather';
-import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
@@ -8,15 +7,15 @@ export const Container = styled.TouchableOpacity`
   margin-bottom: 20px;
   padding: 15px;
   justify-content: space-between;
-  background-color: #232840;
-`;
-
-export const Label = styled.Text`
-  font-size: ${RFValue(20)}px;
-  color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const Icon = styled(Feather)`
-  font-size: ${RFValue(22)}px;
-  color: #ffb726;
+  font-size: ${({ theme }) => theme.fonts.sizes.xl}px;
+  color: ${({ theme }) => theme.colors.secondary};
+`;
+
+export const Label = styled.Text`
+  font-size: ${({ theme }) => theme.fonts.sizes.l}px;
+  color: ${({ theme }) => theme.colors.light};
 `;

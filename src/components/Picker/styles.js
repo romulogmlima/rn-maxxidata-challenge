@@ -1,24 +1,23 @@
-import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
 export const Container = styled.View``;
 
 export const Label = styled.Text`
   margin-bottom: 5px;
-  font-size: ${RFValue(14)}px;
   font-weight: bold;
-  color: #232840;
+  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const PickerContainer = styled.View`
   width: 100%;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.light};
   border-radius: 10px;
   padding: 2px 5px;
 `;
 
 export const ErrorMessage = styled.Text`
-  color: red;
+  color: ${({ theme }) => theme.colors.error};
   margin-top: 5px;
-  font-size: ${RFValue(12)}px;
+  font-size: ${({ theme }) => theme.fonts.sizes.xs}px;
 `;

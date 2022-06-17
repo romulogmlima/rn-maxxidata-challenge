@@ -1,4 +1,3 @@
-import { RFValue } from 'react-native-responsive-fontsize';
 import { Switch as BasicSwitch } from 'react-native-switch';
 import styled from 'styled-components/native';
 
@@ -11,15 +10,16 @@ export const Container = styled.View`
 `;
 
 export const Label = styled.Text`
-  font-size: ${RFValue(14)}px;
-  color: #232840;
+  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
+  color: ${({ theme }) => theme.colors.primary};
   font-weight: bold;
 `;
 
-export const Switch = styled(BasicSwitch).attrs(() => ({
+export const Switch = styled(BasicSwitch).attrs(({ theme }) => ({
   activeText: '',
   inActiveText: '',
   switchLeftPx: 3,
   switchRightPx: 3,
   circleBorderWidth: 3,
+  backgroundActive: theme.colors.success,
 }))``;
