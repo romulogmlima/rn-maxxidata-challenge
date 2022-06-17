@@ -1,6 +1,6 @@
-#### Descrição do Projeto
+#### :large_blue_circle: Descrição do Projeto
 
-#### 🛠 Tecnologias
+#### 🛠 Tecnologias utilizadas
 
 - **[React Native](https://reactnative.dev/)**
 - **[Expo](https://expo.dev/)**
@@ -10,15 +10,32 @@
 - **[React Navigation](https://reactnavigation.org/)**
 - **[Yup](https://github.com/jquense/yup)**
 - **[React-Redux](https://react-redux.js.org/)**
+- **[JSON Server](https://github.com/typicode/json-server)** (para criar uma API REST Fake)
 
-#### Dependências de desenvolvimento
+#### :wrench: Dependências de desenvolvimento
 
 - **[Commitlint](https://commitlint.js.org/)**
 - **[Commitizen](https://commitizen-tools.github.io/commitizen/)**
 - **[ESLint](https://eslint.org/)**
 - **[Prettier](https://prettier.io/)**
 
-#### 🚀 Como executar o projeto
+#### :iphone: Demonstração da aplicação
+
+<img alt="tela-home" src="https://user-images.githubusercontent.com/14766255/174283008-9238f5a0-af79-427d-ad4a-2448ec51b533.png" width="200px">
+
+<img alt="tela-cadastrar-profissional" src="https://user-images.githubusercontent.com/14766255/174283474-451f9064-7392-4b32-8562-ba455facf1b9.png" width="200px">
+
+<img alt="tela-listar-profissionais" src="https://user-images.githubusercontent.com/14766255/174283703-567073b7-0273-4b76-8c11-bee7139fba32.png" width="200px">
+
+<img alt="tela-cadastrar-profissao" src="https://user-images.githubusercontent.com/14766255/174283962-cd53b5f0-a493-4815-bea8-2c8dc2fef7f0.png" width="200px">
+
+<img alt="tela-listar-profissoes" src="https://user-images.githubusercontent.com/14766255/174284131-fcb47e65-6e26-4b37-ae56-c9f87efd54e5.png" width="200px">
+
+<img alt="tela-editar-profissional" src="https://user-images.githubusercontent.com/14766255/174284536-55231c39-a79a-4241-b7d8-be6410e03367.png" width="200px">
+
+<img alt="tela-editar-profissao" src="https://user-images.githubusercontent.com/14766255/174285048-6bf21b80-4ea7-4b27-8161-d24621e2dbe8.png" width="200px">
+
+#### 🚀 Como executar o projeto Expo
 
 ```bash
 
@@ -36,7 +53,22 @@ $ yarn start
 
 ```
 
-#### Funcionalidades da aplicação
+#### 🚀 Como executar o projeto JSON Server
+
+```bash
+
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd rn-maxxidata-challenge/json-server
+
+# Instale as dependências
+$ yarn install
+
+# Inicie o servidor
+$ node server.js
+
+```
+
+#### :heavy_check_mark: Funcionalidades da aplicação
 
 ##### Profissional
 
@@ -62,11 +94,11 @@ $ yarn start
 4. Envie as suas alterações: `git push origin my-feature`
 5. Crie um novo Pull Request
 
-#### 📝 Licença
+#### :page_facing_up: Licença
 
 Este projeto está sob a licença [MIT](./LICENSE.md).
 
-#### Autor
+#### :computer: Autor
 
 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/14766255?v=4" width="100px;" alt=""/>
 
