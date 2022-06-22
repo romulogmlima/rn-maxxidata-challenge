@@ -1,0 +1,81 @@
+{
+  "professionals": [
+    {
+      "fullName": "Maria da Silva",
+      "phoneNumber": "(85) 99000-0000",
+      "email": "maria@maria.com",
+      "professionId": 2,
+      "status": true,
+      "createdAt": "2022-06-17T10:16:55.013Z",
+      "updatedAt": "2022-06-17T10:19:44.280Z",
+      "id": 1
+    },
+    {
+      "fullName": "João Lima",
+      "phoneNumber": "",
+      "email": "joao@joao.com",
+      "professionId": 5,
+      "status": true,
+      "createdAt": "2022-06-17T10:17:25.150Z",
+      "updatedAt": "2022-06-17T10:17:25.150Z",
+      "id": 2
+    },
+    {
+      "fullName": "Paulo Gomes",
+      "phoneNumber": "(88) 99000-0000",
+      "email": "",
+      "professionId": 3,
+      "status": false,
+      "createdAt": "2022-06-17T10:20:29.017Z",
+      "updatedAt": "2022-06-17T10:20:29.017Z",
+      "id": 3
+    },
+    {
+      "fullName": "Ana Pontes",
+      "phoneNumber": "(11) 99000-0000",
+      "email": "ana@ana.com",
+      "professionId": 1,
+      "status": true,
+      "createdAt": "2022-06-17T10:21:45.906Z",
+      "updatedAt": "2022-06-17T10:21:45.906Z",
+      "id": 4
+    }
+  ],
+  "professions": [
+    {
+      "description": "Médico(a)",
+      "status": true,
+      "createdAt": "2022-06-17T10:07:17.457Z",
+      "updatedAt": "2022-06-17T10:07:17.457Z",
+      "id": 1
+    },
+    {
+      "description": "Enfermeiro(a)",
+      "status": true,
+      "createdAt": "2022-06-17T10:08:26.554Z",
+      "updatedAt": "2022-06-17T10:08:26.554Z",
+      "id": 2
+    },
+    {
+      "description": "Advogado(a)",
+      "status": true,
+      "createdAt": "2022-06-17T10:10:52.270Z",
+      "updatedAt": "2022-06-17T10:10:52.270Z",
+      "id": 3
+    },
+    {
+      "description": "Professor(a)",
+      "status": true,
+      "createdAt": "2022-06-17T10:12:04.788Z",
+      "updatedAt": "2022-06-17T10:12:04.788Z",
+      "id": 4
+    },
+    {
+      "description": "Fotógrafo(a)",
+      "status": true,
+      "createdAt": "2022-06-17T10:15:04.662Z",
+      "updatedAt": "2022-06-17T10:15:04.662Z",
+      "id": 5
+    }
+  ]
+}
