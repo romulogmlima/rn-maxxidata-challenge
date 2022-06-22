@@ -25,14 +25,15 @@ export const ContainerActions = styled.View`
 `;
 
 export const Name = styled.Text`
-  font-weight: bold;
-  font-size: ${({ theme }) => theme.fonts.sizes.l}px;
+  font-size: ${({ theme }) => theme.fonts.size.l}px;
   color: ${({ theme }) => theme.colors.primary};
+  font-family: ${({ theme }) => theme.fonts.weight.bold};
 `;
 
 export const Profession = styled.Text`
-  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
+  font-size: ${({ theme }) => theme.fonts.size.s}px;
   color: ${({ theme }) => theme.colors.primary};
+  font-family: ${({ theme }) => theme.fonts.weight.medium};
 `;
 
 export const Footer = styled.View`
@@ -50,7 +51,7 @@ export const ContainerEditButton = styled.TouchableOpacity`
 `;
 
 export const Icon = styled(MaterialCommunityIcons)`
-  font-size: ${({ theme }) => theme.fonts.sizes.xl}px;
+  font-size: ${({ theme }) => theme.fonts.size.xl}px;
   color: ${({ theme }) => theme.colors.primary};
 `;
 
@@ -66,5 +67,6 @@ export const Badge = styled.View`
 
 export const BadgeLabel = styled.Text`
   color: ${({ theme }) => theme.colors.light};
-  font-size: ${({ theme }) => theme.fonts.sizes.xs}px;
+  font-size: ${({ theme }) => theme.fonts.size.xs}px;
+  font-family: ${({ theme }) => theme.fonts.weight.medium};
 `;

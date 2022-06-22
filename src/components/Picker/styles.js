@@ -4,9 +4,9 @@ export const Container = styled.View``;
 
 export const Label = styled.Text`
   margin-bottom: ${({ theme }) => theme.spacing.xs}px;
-  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
+  font-size: ${({ theme }) => theme.fonts.size.s}px;
   color: ${({ theme }) => theme.colors.primary};
-  font-weight: bold;
+  font-family: ${({ theme }) => theme.fonts.weight.bold};
 `;
 
 export const PickerContainer = styled.View`
@@ -20,5 +20,5 @@ export const PickerContainer = styled.View`
 export const ErrorMessage = styled.Text`
   color: ${({ theme }) => theme.colors.error};
   margin-top: ${({ theme }) => theme.spacing.xs}px;
-  font-size: ${({ theme }) => theme.fonts.sizes.xs}px;
+  font-size: ${({ theme }) => theme.fonts.size.xs}px;
 `;

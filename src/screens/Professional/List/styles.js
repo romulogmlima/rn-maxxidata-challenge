@@ -6,5 +6,5 @@ export const EmptyListMessage = styled.Text`
   margin-top: ${({ theme }) => theme.spacing.m}px;
   text-align: center;
   color: ${({ theme }) => theme.colors.primary};
-  font-size: ${({ theme }) => theme.fonts.sizes.m}px;
+  font-size: ${({ theme }) => theme.fonts.size.m}px;
 `;

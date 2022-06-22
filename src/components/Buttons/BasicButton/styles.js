@@ -11,8 +11,8 @@ export const Container = styled.TouchableOpacity`
 `;
 
 export const Label = styled.Text`
-  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
-  font-weight: bold;
+  font-size: ${({ theme }) => theme.fonts.size.s}px;
+  font-family: ${({ theme }) => theme.fonts.weight.bold};
   color: ${({ theme }) => theme.colors.light};
 `;
 

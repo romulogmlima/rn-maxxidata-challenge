@@ -11,11 +11,12 @@ export const Container = styled.TouchableOpacity`
 `;
 
 export const Icon = styled(Feather)`
-  font-size: ${({ theme }) => theme.fonts.sizes.xl}px;
+  font-size: ${({ theme }) => theme.fonts.size.xl}px;
   color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const Label = styled.Text`
-  font-size: ${({ theme }) => theme.fonts.sizes.l}px;
+  font-size: ${({ theme }) => theme.fonts.size.l}px;
   color: ${({ theme }) => theme.colors.light};
+  font-family: ${({ theme }) => theme.fonts.weight.bold};
 `;

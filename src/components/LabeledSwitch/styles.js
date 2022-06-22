@@ -10,9 +10,9 @@ export const Container = styled.View`
 `;
 
 export const Label = styled.Text`
-  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
+  font-size: ${({ theme }) => theme.fonts.size.s}px;
   color: ${({ theme }) => theme.colors.primary};
-  font-weight: bold;
+  font-family: ${({ theme }) => theme.fonts.weight.bold};
 `;
 
 export const Switch = styled(BasicSwitch).attrs(({ theme }) => ({

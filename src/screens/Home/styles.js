@@ -14,12 +14,13 @@ export const GreetingContainer = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: ${({ theme }) => theme.fonts.sizes.xl}px;
-  font-weight: bold;
+  font-size: ${({ theme }) => theme.fonts.size.xl}px;
+  font-family: ${({ theme }) => theme.fonts.weight.bold};
 `;
 
 export const SubTitle = styled.Text`
-  font-size: ${({ theme }) => theme.fonts.sizes.l}px;
+  font-size: ${({ theme }) => theme.fonts.size.l}px;
+  font-family: ${({ theme }) => theme.fonts.weight.medium};
 `;
 
 export const MenuContainer = styled.View`

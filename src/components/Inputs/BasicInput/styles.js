@@ -6,9 +6,9 @@ export const Container = styled.View`
 
 export const Label = styled.Text`
   margin-bottom: ${({ theme }) => theme.spacing.xs}px;
-  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
-  font-weight: bold;
+  font-size: ${({ theme }) => theme.fonts.size.s}px;
   color: ${({ theme }) => theme.colors.primary};
+  font-family: ${({ theme }) => theme.fonts.weight.bold};
 `;
 
 export const TextField = styled.TextInput.attrs(({ theme }) => ({
@@ -19,12 +19,13 @@ export const TextField = styled.TextInput.attrs(({ theme }) => ({
     ${({ theme }) => theme.spacing.s}px;
   color: ${({ theme }) => theme.colors.primary};
   border-radius: 10px;
-  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
+  font-size: ${({ theme }) => theme.fonts.size.s}px;
   background-color: ${({ theme }) => theme.colors.light};
+  font-family: ${({ theme }) => theme.fonts.weight.medium};
 `;
 
 export const ErrorMessage = styled.Text`
   color: ${({ theme }) => theme.colors.error};
   margin-top: ${({ theme }) => theme.spacing.xs}px;
-  font-size: ${({ theme }) => theme.fonts.sizes.xs}px;
+  font-size: ${({ theme }) => theme.fonts.size.xs}px;
 `;

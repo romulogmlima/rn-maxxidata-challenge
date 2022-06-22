@@ -27,12 +27,12 @@ export const ContainerEditButton = styled.TouchableOpacity`
 `;
 
 export const Icon = styled(MaterialCommunityIcons)`
-  font-size: ${({ theme }) => theme.fonts.sizes.xl}px;
+  font-size: ${({ theme }) => theme.fonts.size.xl}px;
 `;
 
 export const Description = styled.Text`
-  font-size: ${({ theme }) => theme.fonts.sizes.l}px;
-  font-weight: bold;
+  font-size: ${({ theme }) => theme.fonts.size.l}px;
+  font-family: ${({ theme }) => theme.fonts.weight.bold};
 `;
 
 export const Footer = styled.View`
@@ -53,5 +53,6 @@ export const Badge = styled.View`
 
 export const BadgeLabel = styled.Text`
   color: ${({ theme }) => theme.colors.light};
-  font-size: ${({ theme }) => theme.fonts.sizes.xs}px;
+  font-size: ${({ theme }) => theme.fonts.size.xs}px;
+  font-family: ${({ theme }) => theme.fonts.weight.medium};
 `;

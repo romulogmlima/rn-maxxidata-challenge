@@ -19,7 +19,7 @@ export const ContainerButtons = styled.View`
 `;
 
 export const Message = styled.Text`
-  font-size: ${({ theme }) => theme.fonts.sizes.xl}px;
+  font-size: ${({ theme }) => theme.fonts.size.xl}px;
   font-weight: bold;
   text-align: center;
 `;

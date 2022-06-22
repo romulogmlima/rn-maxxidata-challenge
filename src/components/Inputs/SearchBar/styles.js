@@ -9,7 +9,8 @@ export const Container = styled(TextInput).attrs(({ theme }) => ({
     ${({ theme }) => theme.spacing.s}px;
   border-radius: 10px;
   margin-bottom: ${({ theme }) => theme.spacing.m}px;
-  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
+  font-size: ${({ theme }) => theme.fonts.size.s}px;
   background-color: ${({ theme }) => theme.colors.light};
   color: ${({ theme }) => theme.colors.primary};
+  font-family: ${({ theme }) => theme.fonts.weight.medium};
 `;

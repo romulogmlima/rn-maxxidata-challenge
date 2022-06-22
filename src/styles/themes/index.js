@@ -30,12 +30,17 @@ export const theme = {
     xl: 30,
   },
   fonts: {
-    sizes: {
+    size: {
       xs: RFValue(12),
       s: RFValue(14),
       m: RFValue(16),
       l: RFValue(18),
       xl: RFValue(28),
+    },
+    weight: {
+      regular: 'Oxygen_300Light',
+      medium: 'Oxygen_400Regular',
+      bold: 'Oxygen_700Bold',
     },
   },
 };

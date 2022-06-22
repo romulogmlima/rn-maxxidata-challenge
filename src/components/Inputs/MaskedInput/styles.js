@@ -7,8 +7,8 @@ export const Container = styled.View`
 
 export const Label = styled.Text`
   margin-bottom: ${({ theme }) => theme.spacing.xs}px;
-  font-weight: bold;
-  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
+  font-family: ${({ theme }) => theme.fonts.weight.bold};
+  font-size: ${({ theme }) => theme.fonts.size.s}px;
   color: ${({ theme }) => theme.colors.primary};
 `;
 
@@ -20,12 +20,13 @@ export const TextField = styled(TextInputMask).attrs(({ theme }) => ({
     ${({ theme }) => theme.spacing.s}px;
   border-radius: 10px;
   color: ${({ theme }) => theme.colors.primary};
-  font-size: ${({ theme }) => theme.fonts.sizes.s}px;
+  font-size: ${({ theme }) => theme.fonts.size.s}px;
   background-color: ${({ theme }) => theme.colors.light};
+  font-family: ${({ theme }) => theme.fonts.weight.medium};
 `;
 
 export const ErrorMessage = styled.Text`
   margin-top: ${({ theme }) => theme.spacing.xs}px;
   color: ${({ theme }) => theme.colors.error};
-  font-size: ${({ theme }) => theme.fonts.sizes.xs}px;
+  font-size: ${({ theme }) => theme.fonts.size.xs}px;
 `;
