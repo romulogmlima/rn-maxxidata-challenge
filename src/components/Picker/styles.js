@@ -11,7 +11,7 @@ export const Label = styled.Text`
 
 export const PickerContainer = styled.View`
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.light};
+  background-color: ${({ theme }) => theme.colors.inputs};
   border-radius: 10px;
   padding: ${({ theme }) => theme.spacing.xxs}px
     ${({ theme }) => theme.spacing.xs}px;

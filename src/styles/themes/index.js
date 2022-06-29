@@ -8,18 +8,22 @@ const palette = {
   alizarinCrimson: '#E52424',
   silver: '#C7C7C7',
   mystic: '#dce7ec',
+  gallery: '#EDEDED',
+  solitude: '#D7EBFF',
 };
 
 export const theme = {
   colors: {
     primary: palette.ebonyClay,
     secondary: palette.mySin,
-    background: palette.mystic,
+    background: palette.white,
     foreground: palette.ebonyClay,
     success: palette.japaneseLaurel,
     error: palette.alizarinCrimson,
     light: palette.white,
     disabled: palette.silver,
+    inputs: palette.gallery,
+    cards: palette.solitude,
   },
   spacing: {
     xxs: 3,

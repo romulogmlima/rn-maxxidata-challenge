@@ -21,7 +21,7 @@ export const TextField = styled(TextInputMask).attrs(({ theme }) => ({
   border-radius: 10px;
   color: ${({ theme }) => theme.colors.primary};
   font-size: ${({ theme }) => theme.fonts.size.s}px;
-  background-color: ${({ theme }) => theme.colors.light};
+  background-color: ${({ theme }) => theme.colors.inputs};
   font-family: ${({ theme }) => theme.fonts.weight.medium};
 `;
 

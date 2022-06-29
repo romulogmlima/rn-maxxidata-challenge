@@ -20,7 +20,7 @@ export const TextField = styled.TextInput.attrs(({ theme }) => ({
   color: ${({ theme }) => theme.colors.primary};
   border-radius: 10px;
   font-size: ${({ theme }) => theme.fonts.size.s}px;
-  background-color: ${({ theme }) => theme.colors.light};
+  background-color: ${({ theme }) => theme.colors.inputs};
   font-family: ${({ theme }) => theme.fonts.weight.medium};
 `;
 
