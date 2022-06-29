@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 export const Card = styled.View`
   width: 100%;
   padding: ${({ theme }) => theme.spacing.s}px;
-  background-color: ${({ theme }) => theme.colors.light};
+  background-color: ${({ theme }) => theme.colors.cards};
   margin-bottom: ${({ theme }) => theme.spacing.s}px;
   border-radius: 10px;
 `;

@@ -5,7 +5,7 @@ export const Card = styled.View`
   width: 100%;
   border-radius: 10px;
   padding: ${({ theme }) => theme.spacing.s}px;
-  background-color: ${({ theme }) => theme.colors.light};
+  background-color: ${({ theme }) => theme.colors.cards};
   margin-bottom: ${({ theme }) => theme.spacing.s}px;
 `;
 
